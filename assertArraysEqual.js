@@ -8,7 +8,7 @@ const assertEqual = function(actual, expected) {
   return result;
 };
 // check if two arrays are equal
-const eqArrays = (arr1, arr2) => {
+const assertArrayEqual = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -20,7 +20,7 @@ const eqArrays = (arr1, arr2) => {
   return true;
 }
 
-assertEqual(eqArrays([1, 2, 3], [1, 2,3]), true); 
-assertEqual(eqArrays([1, 2, 3], [1, 2]), true); 
-assertEqual(eqArrays([], []), true); 
-assertEqual(eqArrays([1, 2, 3], [3,, 2,'1']), true); 
+assertEqual(assertArrayEqual([1, 2, 3], [1, 2,3]), true); 
+assertEqual(assertArrayEqual([1, 2, 3], [1, 2]), true); 
+assertEqual(assertArrayEqual([], []), true); 
+assertEqual(assertArrayEqual([1, 2, 3], [3,, 2,'1']), true); 
