@@ -1,24 +1,5 @@
-const assertEqual = function(actual, expected) {
-  let result = '';
-  if (actual === expected)  {
-    result = console.log(`😀😀😀 ${actual} === ${expected}`);
-  } else  {
-    result = console.log(`😔😔😔 ${actual} !== ${expected}`);
-  }
-  return result;
-};
-// check if two arrays are equal
-const assertArrayEqual = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  
-  for (const num in arr1) {
-    if (arr2[num] !== arr1[num]) 
-      return false;
-  }
-  return true;
-}
+const assertArraysEqual = require('./assertArraysEqual');
+const assertEqual = require('./assertEqual');
 
 const words = ["ground", "control", "to", "major", "tom"];
 const map = function(array, callback) {
@@ -29,6 +10,7 @@ const map = function(array, callback) {
   return results;
 }
 
+module.exports = map;
 // const test = function(word) {return word.toUpperCase() }
 // const results1 = map(words, test);
 const results1 = map(words, word => word[0]);

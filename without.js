@@ -1,24 +1,5 @@
-const assertEqual = function(actual, expected) {
-  let result = '';
-  if (actual === expected)  {
-    result = console.log(`😀😀😀 ${actual} === ${expected}`);
-  } else  {
-    result = console.log(`😔😔😔 ${actual} !== ${expected}`);
-  }
-  return result;
-};
-// check if two arrays are equal
-const assertArrayEqual = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  
-  for (const num in arr1) {
-    if (arr2[num] !== arr1[num])
-      return false;
-  }
-  return true;
-};
+const assertArraysEqual = require('./assertArraysEqual');
+const assertEqual = require('./assertEqual');
 // the func splice/ take out the simmilar items mentioned in the array , and return the newArray
 const without = (words, array) => {
   let newArray = words;
@@ -29,7 +10,7 @@ const without = (words, array) => {
   }
   return  newArray;
 };
-
+module.exports = without;
 
 const words = ["hello", "world", "lighthouse"];
 const sampleArray = ["hello", "world", ];

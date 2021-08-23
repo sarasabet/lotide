@@ -1,3 +1,6 @@
+const assertArraysEqual = require('./assertArraysEqual');
+const assertEqual = require('./assertEqual');
+
 const takeUntil = function(array, callback) {
   let  result = [];
 
@@ -8,28 +11,8 @@ const takeUntil = function(array, callback) {
     }
   }
 }
-const assertEqual = function(actual, expected) {
-  let result = '';
-  if (actual === expected)  {
-    result = console.log(`😀😀😀 ${actual} === ${expected}`);
-  } else  {
-    result = console.log(`😔😔😔 ${actual} !== ${expected}`);
-  }
-  return result;
-};
-// check if two arrays are equal
-const assertArrayEqual = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  
-  for (const num in arr1) {
-    if (arr2[num] !== arr1[num]) 
-      return false;
-  }
-  return true;
-}
 
+module.exports = takeUntil;
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
 console.log(results1);

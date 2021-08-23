@@ -1,14 +1,5 @@
-const assertEqual = function(actual, expected) {
-  const inspect = require('util').inspect;
-  console.log(`Example label: ${inspect(actual)}`);
-  let result = '';
-  if (actual === expected)  {
-    result = console.log(`😀😀😀 passed ${actual} === ${expected}`);
-  } else  {
-    result = console.log(`😔😔😔 failed ${actual} !== ${expected}`);
-  }
-  return result;
-};
+const assertEqual = require('./assertEqual');
+
 
 const eqObjects = function(object1, object2) {
 
@@ -33,6 +24,7 @@ const assertObjectsEqual = function(actual, expected) {
     console.log(`Assertion failed: ${inspect(actual)} !== ${inspect(expected)}`);
   }
 };
+module.exports = assertObjectsEqual
 
 const abc = { a: "1", b: "2", c: "3" };
 const ab = { a: "1", b: "2" };
